@@ -133,7 +133,7 @@ class RankingServiceTest {
 }
 ```
 
-![성공 - 동점자 없을 때](../assets/img/success_without_same_scores.png)
+![성공 - 동점자 없을 때](/assets/img/success_without_same_scores.png)
 
 **동점자가 없을 땐, 랭킹을 잘 구해온다.**
 
@@ -176,7 +176,7 @@ class RankingServiceTest {
 }
 ```
 
-![실패 - 동점자 있을 때](../assets/img/fail_with_same_scores.png)
+![실패 - 동점자 있을 때](/assets/img/fail_with_same_scores.png)
 mocha - 100 -> 1등  
 cafe, latte, americano - 80 -> **공동 2등 3명**  
 cold brew - 60 -> 5등  
@@ -235,7 +235,7 @@ class RankingServiceTest {
 }
 ```
 
-![성공 - 동점자 있을 때](../assets/img/success_with_same_scores.png)
+![성공 - 동점자 있을 때](/assets/img/success_with_same_scores.png)
 
 위 케이스에선 80점 스코어인 멤버는 3명이 있다.  
 80점 스코어 집합 - **`{"latte", "cafe", "americano"}`**
