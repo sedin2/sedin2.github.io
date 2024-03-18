@@ -8,8 +8,8 @@ image: /assets/img/redis.png
 
 ### 📌소개
 
-이전 [포스트](https://sedin2.github.io/posts/redis-data-types-02/)에서 다룬 Redis의 Sorted Set을 활용해 간단한 Ranking Board를 만들어보자.  
-동점자 처리까지 해보기
+이전 [포스트](https://sedin2.github.io/posts/redis-data-types-02/)에서 다룬 Redis의 Sorted Set을 활용해 간단한 **Ranking Board**를 만든다.  
+예제 코드는 **Spring Boot/Java**로 작성되었으며, **Docker를 통한 Redis 실행**은 이전 [포스트](https://sedin2.github.io/posts/redis-data-types-02/)를 참고한다.
 
 ---
 
@@ -66,27 +66,6 @@ public class RedisConfiguration {
 
 spring.redis.port=6379
 spring.redis.host=localhost
-```
-
-**Redis 응답**을 담을 **ResponseRankingDto** 작성
-
-```java
-// ResponseRankingDto.java
-
-@Getter
-@NoArgsConstructor
-@AllArgsConstructor
-public class ResponseRankingDto {
-
-    private String member;
-
-    private double score;
-
-    public static ResponseRankingDto convertToResponseRankingDto(ZSetOperations.TypedTuple<String> tuple) {
-        return new ResponseRankingDto(tuple.getValue(), tuple.getScore());
-    }
-
-}
 ```
 
 ---
