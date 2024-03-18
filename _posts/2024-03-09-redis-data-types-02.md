@@ -10,7 +10,7 @@ image: /assets/img/redis.png
 
 **`Redis`**의 **`data type`**에 대해 알아보고 **`docker`**로 **`redis-cli`**을 통해 학습해보자.  
 먼저 redis 공식 사이트([Redis data type](https://redis.io/docs/data-types/))에 가보면 다양한 redis에서 지원하는 data type이 있다.  
-대표적으로 **`Strings, JSON, Lists, Sets, Hashes, Sorted sets, Streams`** 등이 있다.
+대표적으로 **`Strings, JSON, Lists, Sets, Hashes, Sorted Sets, Streams`** 등이 있다.
 
 ---
 
@@ -233,9 +233,9 @@ OK
 
 ### 📝마무리
 
-Redis에서 지원하는 다양한 data type에 대해 다뤄보는 시간을 가져봤는데요  
-각각의 특징을 잘 이해하고 있다면 필요한 상황에 맞는 data type을 선택할 수 있을 것입니다.  
-다음 포스팅에서는 Spring/java에서 redis를 이용해 간단한 랭킹 대시보드를 만들어 보겠습니다.
+이렇게 Redis에서 제공하는 다양한 data type에 대해 학습했다.  
+각각의 특징을 잘 이해하고 있다면 필요한 상황에 맞는 data type을 선택할 수 있다.  
+다음 포스팅에서는 Spring/java에서 redis를 이용해 간단한 랭킹 대시보드를 만들어 보자.
 
 ---
 
