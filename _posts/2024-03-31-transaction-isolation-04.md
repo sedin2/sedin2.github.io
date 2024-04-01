@@ -110,7 +110,7 @@ SET SESSION TRANSACTION ISOLATION LEVEL SERIALIZABLE;     # SERIALIZABLE
 
 - 각 트랜잭션에서의 변경 내역이 **COMMIT, ROLLBACK 여부에 상관없이 다른 트랜잭션에서 보여진다(Dirty Read)**. 정합성에 문제가 많은 격리수준이며, 권장되지 않는 격리수준이다.
 
-![READ UNCOMMITTED](../assets/img/read_uncommitted.png)
+![READ UNCOMMITTED](/assets/img/read_uncommitted.png)
 
 1. 터미널을 두개 띄워서 각 세션의 **Transaction Isolation Level**을 **READ UNCOMMITTED**로 변경 한다.
 
@@ -177,7 +177,7 @@ SET SESSION TRANSACTION ISOLATION LEVEL SERIALIZABLE;     # SERIALIZABLE
 
 - Oracle DBMS의 기본 격리수준이다. 온라인 서비스에서 가장 많이 선택되는 격리수준이며, **Dirty Read**는 발생하진 않지만 **READ COMMITTED** 격리수준에서도 **NON-REPEATABLE READ** 부정합 문제가 발생할 수 있다.
 
-![READ COMMITTED](../assets/img/read_committed.png)
+![READ COMMITTED](/assets/img/read_committed.png)
 
 1. **READ UNCOMMITTED**격리수준 실습 때 띄어놓은 두 개의 터미널을 그대로 사용한다.
    각 세션의 **Transaction Isolation Level**을 **READ COMMITTED**로 변경한다.
@@ -297,7 +297,7 @@ SET SESSION TRANSACTION ISOLATION LEVEL SERIALIZABLE;     # SERIALIZABLE
   **InnoDB 스토리지 엔진**은 트랜잭션이 ROLLBACK될 가능성에 대비해 변경되기전 레코드를 **Undo 영역**에 백업 해두고, 실제 레코드 값을 변경한다.**(MVCC - Multi Version Concurrency Control)**  
   **Undo 영역에 백업된 데이터**는 InnoDB 스토리지 엔진이 필요없다고 판단되는 시점에 **주기적으로 삭제**한다. (JVM GC와 비슷 한 듯)
 
-![REPEATABLE READ FLOW](../assets/img/repeatable_read.png)
+![REPEATABLE READ FLOW](/assets/img/repeatable_read.png)
 
 1. **READ UNCOMMITTED**격리수준 실습 때 띄어놓은 두 개의 터미널을 그대로 사용한다.  
    각 세션의 **Transaction Isolation Level**을 **REPEATABLE READ**로 변경 해준다.
@@ -391,7 +391,7 @@ SET SESSION TRANSACTION ISOLATION LEVEL SERIALIZABLE;     # SERIALIZABLE
   **(동시성 ↓, 데이터 격리성 ↑)**  
   **격리 수준 관련 문제**가 발생하지 않는다.
 
-![SERIALIZABLE FLOW](../assets/img/serializable.png)
+![SERIALIZABLE FLOW](/assets/img/serializable.png)
 
 1. **SERIALIZABLE 격리수준**에선 실행중인 TRX-ID(트랜잭션 아이디)보다 **빠른 TRX-ID**가 있다면 해당 트랜잭션이 **커밋 되거나 롤백**될때까지 **대기** 후 실행된다.  
    따라서 동시성이 많이 요구되는 환경에서 Lock이 걸릴 수 있으며 성능에 치명적일 수 있다.
